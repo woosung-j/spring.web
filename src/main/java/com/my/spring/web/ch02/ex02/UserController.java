@@ -18,10 +18,19 @@ public class UserController {
 		return "ch02/ex02/userIn";
 	}
 	
+//	@PostMapping("userOut")
+//	public String userOut(@RequestParam String userName,
+//							@RequestParam int age,
+//							@RequestParam @DateTimeFormat(pattern="yyyy-MM-dd") LocalDate regDate,
+//							Model model) {
+//		model.addAttribute("user", new User(userName, age, regDate));
+//		return "ch02/ex02/userOut";
+//	}
+	
 	@PostMapping("userOut")
-	public String userOut(@RequestParam String userName,
-							@RequestParam int age,
-							@RequestParam @DateTimeFormat(pattern="yyyy-MM-dd") LocalDate regDate,
+	public String userOut(String userName, 
+							int age,
+							@DateTimeFormat(pattern="yyyy-MM-dd") LocalDate regDate,
 							Model model) {
 		model.addAttribute("user", new User(userName, age, regDate));
 		return "ch02/ex02/userOut";
